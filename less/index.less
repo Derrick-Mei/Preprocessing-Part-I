@@ -155,7 +155,7 @@ html {
 // Mixins
 .flex-column {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-content: space-between;
 }
 
@@ -179,6 +179,9 @@ header {
     justify-content: flex-end;
     width: 100%;
     padding: 20px 0;
+    @media (max-width: 500px) {
+        justify-content: space-around;
+    }
 
     nav {
         width: 40%;
@@ -200,6 +203,10 @@ header {
     padding: 30px 3%;
     max-width: 600px;
     margin-bottom: @heavy-btm-margin;
+    @media (max-width: 500px) {
+        .flex-column();
+        align-items: center;
+    }
 
     img {
         width: 33%;
@@ -207,6 +214,11 @@ header {
 
     h1 {
         font-size: 4rem;
+        div {
+            @media(max-width: 500px) {
+                display: none;
+            }
+        }
     }
     h4 {
         font-size: 2rem;
@@ -246,6 +258,9 @@ header {
     .half {
         width: 50%;
         margin-bottom: @heavy-btm-margin;
+        @media (max-width: 500px) {
+            width: 100%;
+        }
 
         .blank-table {
             border: 1px solid @background-color;
@@ -269,10 +284,6 @@ header {
         .top-row {
             font-size: 2rem;
             font-weight: 900;
-            margin-right: 13%;
-        }
-        .row {
-            margin-right: 13%;
         }
         tr {
             line-height: 30px;
